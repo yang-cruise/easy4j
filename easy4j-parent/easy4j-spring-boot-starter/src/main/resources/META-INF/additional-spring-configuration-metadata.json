@@ -1,0 +1,9 @@
+{
+  "properties": [
+    {
+      "name": "easy4j.ignore-response",
+      "type": "java.util.List",
+      "description": "设置全局响应拦截的放行地址"
+    }
+  ]
+}

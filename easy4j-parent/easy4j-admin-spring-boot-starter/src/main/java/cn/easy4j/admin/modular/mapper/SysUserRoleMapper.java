@@ -1,0 +1,13 @@
+package cn.easy4j.admin.modular.mapper;
+
+import cn.easy4j.admin.modular.entity.SysUserRole;
+import com.baomidou.mybatisplus.core.mapper.BaseMapper;
+import org.apache.ibatis.annotations.Mapper;
+
+/**
+ * @author yangzongmin
+ * @date 2019-07-25
+ */
+@Mapper
+public interface SysUserRoleMapper extends BaseMapper<SysUserRole> {
+}

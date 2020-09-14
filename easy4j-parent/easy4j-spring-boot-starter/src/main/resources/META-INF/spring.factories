@@ -1,0 +1,7 @@
+# AutoConfiguration
+org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
+cn.easy4j.framework.config.Easy4jAutoConfiguration,\
+cn.easy4j.framework.config.MyBatisPlusAutoConfiguration,\
+cn.easy4j.framework.config.JacksonAutoConfiguration,\
+cn.easy4j.framework.config.CacheAutoConfiguration,\
+cn.easy4j.framework.config.CheckRepeatSubmitAutoConfiguration

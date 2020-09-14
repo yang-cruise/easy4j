@@ -1,0 +1,57 @@
+$height36: 36px;
+
+$header-height: 64px;
+
+$color1: #191a23;
+
+$color2: #515a6e;
+
+$color3: #f7f7f7;
+
+$color4: #101117;
+
+$color5: #fff;
+
+$color6: #e7eaec;
+
+$color7: #f8f8f9;
+
+$color8: #ecf5ff;
+
+// 水平-左对齐
+@mixin flex-start-h {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+// 水平-居中
+@mixin flex-center-h {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+// 水平-左右对齐
+@mixin flex-between-h {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+// 垂直-居中-铺满
+@mixin flex-between-v {
+  display: flex;
+  justify-content: flex-start;
+  align-items: stretch;
+  flex-direction: column;
+}
+
+// 卡片
+@mixin easy4j-card-body {
+  // border-radius: 4px;
+  border-radius: 4px 4px 0 0;
+  background: $color5;
+  // margin: 20px;
+  // margin-top: 14px;
+}

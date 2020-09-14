@@ -1,0 +1,27 @@
+{
+  "properties": [
+    {
+      "name": "easy4j.admin.swagger.enable",
+      "type": "java.lang.Boolean",
+      "defaultValue": false,
+      "description": "是否启用swagger"
+    },
+    {
+      "name": "easy4j.admin.swagger.host",
+      "type": "java.lang.String",
+      "defaultValue": "127.0.0.1:${server.port}",
+      "description": "接口地址"
+    },
+    {
+      "name": "easy4j.admin.security.enable",
+      "type": "java.lang.Boolean",
+      "description": "是否开启全局的方法鉴权",
+      "defaultValue": true
+    },
+    {
+      "name": "easy4j.admin.security.ignore-urls",
+      "type": "java.util.List",
+      "description": "设置需要放行的接口"
+    }
+  ]
+}

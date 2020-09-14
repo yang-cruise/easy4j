@@ -1,0 +1,30 @@
+{
+  "properties": [
+    {
+      "name": "easy4j.oss.aliyun.access-key-id",
+      "type": "java.lang.String",
+      "description": "accessKeyId"
+    },
+    {
+      "name": "easy4j.oss.aliyun.access-key-secret",
+      "type": "java.lang.String",
+      "description": "accessKeySecret"
+    },
+    {
+      "name": "easy4j.oss.aliyun.bucket-name",
+      "type": "java.lang.String",
+      "description": "oss bucket 名称"
+    },
+    {
+      "name": "easy4j.oss.aliyun.endpoint",
+      "type": "java.lang.String",
+      "description": "oss 地域节点(例如：oss-cn-beijing.aliyuncs.com)"
+    },
+    {
+      "name": "easy4j.oss.local.path",
+      "type": "java.lang.String",
+      "defaultValue": "{项目根目录}/static/upload",
+      "description": "文件存储路径，注意linux与windows区别，linux示例：/usr/upload，windows示例：E:\\upload"
+    }
+  ]
+}
