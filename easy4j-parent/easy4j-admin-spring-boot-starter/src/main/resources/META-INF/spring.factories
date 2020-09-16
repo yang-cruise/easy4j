@@ -1,5 +1,4 @@
 org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
 cn.easy4j.admin.config.Easy4jAdminAutoConfiguration,\
 cn.easy4j.admin.config.Swagger2AutoConfiguration,\
-cn.easy4j.admin.config.WebSecurityAutoConfiguration,\
-cn.easy4j.admin.config.GlobalMethodSecurityAutoConfiguration
+cn.easy4j.admin.config.WebSecurityAutoConfiguration

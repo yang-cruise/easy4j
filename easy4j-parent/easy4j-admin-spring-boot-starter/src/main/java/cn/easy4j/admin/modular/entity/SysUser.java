@@ -1,5 +1,6 @@
 package cn.easy4j.admin.modular.entity;
 
+import cn.easy4j.dict.core.jackson.JsonDictConvert;
 import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableLogic;
@@ -50,6 +51,7 @@ public class SysUser implements Serializable {
     @ApiModelProperty(value = "生日")
     private LocalDate birthday;
 
+    @JsonDictConvert(code = "sys_user.sex")
     @ApiModelProperty(value = "性别 1男  2女")
     private String sex;
 

@@ -10,8 +10,8 @@ import lombok.Setter;
 @Getter
 public class Easy4jAdminProperties {
 
-    private Swagger swagger;
-    private Security security;
+    private Swagger swagger = new Swagger();
+    private Security security = new Security();
 
     @Setter
     @Getter

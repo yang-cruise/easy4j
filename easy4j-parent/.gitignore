@@ -4,6 +4,7 @@
 *.idea
 target/
 logs/
+easy4j-sample/
 
 # Log file
 *.log

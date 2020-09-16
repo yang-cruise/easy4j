@@ -1,5 +1,6 @@
 package cn.easy4j.admin.modular.entity;
 
+import cn.easy4j.dict.core.jackson.JsonDictConvert;
 import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.annotation.TableField;
 import com.baomidou.mybatisplus.annotation.TableId;
@@ -44,6 +45,7 @@ public class SysMenu implements Serializable {
     @ApiModelProperty(value = "请求地址")
     private String url;
 
+    @JsonDictConvert(code = "sys_menu.type")
     @ApiModelProperty(value = "菜单类型，D-目录，M-菜单，B-按钮")
     private String type;
 
