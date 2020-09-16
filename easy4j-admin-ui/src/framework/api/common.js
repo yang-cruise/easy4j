@@ -64,7 +64,7 @@ export const putSysUserPassword = params => http.put(`/sys_users/${ params.id }/
 export const getSelfInfo = () => http.get('/sys_users/self_info')
 
 // 系统管理-部门-查询全部部门树
-export const getSysDeptsTree = params => http.get('/sys-depts/tree', params)
+export const getSysDeptsTree = params => http.get('/sys_depts/tree', params)
 
 // 系统管理-部门-新增部门
 export const postSysDept = params => http.post('/sys_depts', params, { catch: '自定义异常处理' })
