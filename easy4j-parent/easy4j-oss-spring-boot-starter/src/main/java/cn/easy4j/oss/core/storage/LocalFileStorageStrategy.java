@@ -1,8 +1,7 @@
-package cn.easy4j.oss.core.storage.impl;
+package cn.easy4j.oss.core.storage;
 
 import cn.easy4j.common.exception.BusinessException;
 import cn.easy4j.oss.config.properties.Easy4jOssProperties;
-import cn.easy4j.oss.core.storage.FileStorage;
 import cn.easy4j.oss.core.util.FileUtil;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.StringUtils;
@@ -17,11 +16,11 @@ import java.io.*;
  * @since 2020/9/8 10:48
  */
 @Slf4j
-public class FileStorageLocalImpl implements FileStorage {
+public class LocalFileStorageStrategy implements FileStorageStrategy {
 
     private final Easy4jOssProperties.Local local;
 
-    public FileStorageLocalImpl(Easy4jOssProperties.Local local) {
+    public LocalFileStorageStrategy(Easy4jOssProperties.Local local) {
         this.local = local;
     }
 

@@ -18,7 +18,7 @@ import java.time.LocalDateTime;
  * 系统管理用户表
  *
  * @author yangzongmin
- * @date 2019-07-19
+ * @since 2019-07-19
  */
 @Data
 @Accessors(chain = true)

@@ -22,8 +22,8 @@ public final class FileUtil {
 
     /**
      * 获取文件后缀名 不包含点
-     *
-     * @author ChenYichen
+     * @param fileWholeName 完整文件名称
+     * @return 文件后缀
      */
     public static String getFileSuffix(String fileWholeName) {
         if (StringUtils.isBlank(fileWholeName)) {
@@ -35,8 +35,9 @@ public final class FileUtil {
 
     /**
      * 获取文件名称(考虑文件名和后缀为空的情况，返回默认的文件名和后缀)
-     *
-     * @author ChenYichen
+     * @param fileName 文件名
+     * @param suffix 后缀
+     * @return 文件名称
      */
     public static String getFileName(String fileName, String suffix) {
         if (StringUtils.isBlank(fileName)) {

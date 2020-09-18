@@ -19,7 +19,7 @@ import java.util.Set;
 
 /**
  * @author ChenYichen
- * @date 2020/2/6
+ * @since 2020/2/6
  */
 @Api(tags = "1005.数据字典")
 @RestController

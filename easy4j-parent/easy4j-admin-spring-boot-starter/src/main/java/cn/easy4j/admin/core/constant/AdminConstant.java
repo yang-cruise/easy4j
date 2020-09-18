@@ -4,7 +4,7 @@ package cn.easy4j.admin.core.constant;
  * Admin工程的常量
  *
  * @author ChenYichen
- * @date 2020/2/13
+ * @since 2020/2/13
  */
 public final class AdminConstant {
 

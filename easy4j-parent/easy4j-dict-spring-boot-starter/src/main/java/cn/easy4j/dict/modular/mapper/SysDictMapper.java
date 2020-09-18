@@ -11,7 +11,7 @@ import java.util.List;
 
 /**
  * @author yangzongmin
- * @date 2019-08-21
+ * @since 2019-08-21
  */
 @Mapper
 public interface SysDictMapper extends BaseMapper<SysDict> {

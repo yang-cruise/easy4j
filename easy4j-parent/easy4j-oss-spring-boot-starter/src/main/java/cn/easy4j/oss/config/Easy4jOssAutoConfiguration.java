@@ -1,8 +1,8 @@
 package cn.easy4j.oss.config;
 
 import cn.easy4j.oss.config.properties.Easy4jOssProperties;
-import cn.easy4j.oss.core.storage.FileStorage;
-import cn.easy4j.oss.core.storage.impl.FileStorageLocalImpl;
+import cn.easy4j.oss.core.storage.FileStorageStrategy;
+import cn.easy4j.oss.core.storage.LocalFileStorageStrategy;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnMissingBean;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.context.annotation.Bean;
@@ -25,8 +25,8 @@ public class Easy4jOssAutoConfiguration {
     }
 
     @Bean
-    @ConditionalOnMissingBean(FileStorage.class)
-    public FileStorage fileStorage(Easy4jOssProperties easy4jOssProperties) {
-        return new FileStorageLocalImpl(easy4jOssProperties.getLocal());
+    @ConditionalOnMissingBean(FileStorageStrategy.class)
+    public FileStorageStrategy fileStorage(Easy4jOssProperties easy4jOssProperties) {
+        return new LocalFileStorageStrategy(easy4jOssProperties.getLocal());
     }
 }

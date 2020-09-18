@@ -5,7 +5,7 @@ import cn.easy4j.common.enums.HttpStatusEnum;
 
 /**
  * @author yangzongmin
- * @date 2019-07-19
+ * @since 2019-07-19
  */
 public class SuccessResult<T> extends Result<T> {
 

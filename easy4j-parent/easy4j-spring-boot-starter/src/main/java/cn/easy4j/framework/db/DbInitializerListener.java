@@ -12,7 +12,7 @@ import java.util.Map;
  * 初始化数据库，运行SQL脚本
  *
  * @author yangzongmin
- * @date 2019-07-19
+ * @since 2019-07-19
  */
 @Slf4j
 public class DbInitializerListener implements ApplicationListener<ApplicationReadyEvent>, Ordered {

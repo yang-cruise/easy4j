@@ -14,7 +14,7 @@ import java.util.Map;
  * 微信授权扩展接口
  *
  * @author ChenYichen
- * @date 2020/3/24
+ * @since 2020/3/24
  */
 public interface Easy4jWxMpHandler {
 
@@ -60,6 +60,7 @@ public interface Easy4jWxMpHandler {
      * @param wxMpXmlMessage wxMpXmlMessage
      * @param sysWxMpUser    sysWxMpUser
      * @return WxMpXmlOutMessage
+     * @throws WxErrorException 微信异常信息
      */
     WxMpXmlOutMessage handleScanQrCode(String eventKey, WxMpService wxMpService, WxMpXmlMessage wxMpXmlMessage, SysWxMpUser sysWxMpUser) throws WxErrorException;
 

@@ -72,6 +72,10 @@ public class SubscribeHandler implements WxMpMessageHandler {
 
     /**
      * 处理特殊请求，比如如果是扫码进来的，可以做相应处理
+     * @param wxMessage wxMessage
+     * @param wxMpService wxMpService
+     * @return WxMpXmlOutMessage
+     * @throws WxErrorException 微信异常信息
      */
     private WxMpXmlOutMessage handleSpecial(WxMpXmlMessage wxMessage, WxMpService wxMpService) throws WxErrorException {
         String eventKey = this.getEventKey(wxMessage);

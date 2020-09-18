@@ -11,7 +11,7 @@ import java.util.List;
  * 用户与权限关联表初始化脚本
  *
  * @author yangzongmin
- * @date 2019-07-19
+ * @since 2019-07-19
  */
 @Component
 public class SysUserMenuInitializer extends BaseDbInitializer {

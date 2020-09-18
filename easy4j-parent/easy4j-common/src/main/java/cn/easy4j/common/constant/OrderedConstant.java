@@ -7,7 +7,7 @@ import lombok.NoArgsConstructor;
  * AOP拦截器执行顺序常量，值越小，越先执行
  *
  * @author yangzongmin
- * @date 2019-07-19
+ * @since 2019-07-19
  */
 @NoArgsConstructor(access = AccessLevel.PRIVATE)
 public final class OrderedConstant {

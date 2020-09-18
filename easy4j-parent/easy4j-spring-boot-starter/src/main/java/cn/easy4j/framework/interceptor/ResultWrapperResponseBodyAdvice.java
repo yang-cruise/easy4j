@@ -18,7 +18,7 @@ import org.springframework.web.servlet.mvc.method.annotation.ResponseBodyAdvice;
  * 拦截所有响应，封装一层标准响应格式
  *
  * @author yangzongmin
- * @date 2019/8/19
+ * @since 2019/8/19
  */
 @RestControllerAdvice
 @Order(value = OrderedConstant.RESULT_WRAPPER_ORDER)

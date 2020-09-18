@@ -4,7 +4,7 @@ package cn.easy4j.common.enums;
  * http状态码枚举，对应org.springframework.http.HttpStatus类，相当于翻译为中文
  *
  * @author yangzongmin
- * @date 2019-07-19
+ * @since 2019-07-19
  */
 public enum HttpStatusEnum implements Easy4jHttpStatusEnum {
 

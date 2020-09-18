@@ -12,7 +12,7 @@ import org.springframework.context.annotation.Configuration;
  * MyBatis-Plus 配置类，只有配置了spring.datasource.url属性才会执行
  *
  * @author yangzongmin
- * @date 2019-07-19
+ * @since 2019-07-19
  */
 @Configuration
 @MapperScan("cn.easy4j.**.mapper")

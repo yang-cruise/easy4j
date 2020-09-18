@@ -7,7 +7,7 @@ import org.springframework.stereotype.Component;
 
 /**
  * @author yangzongmin
- * @date 2019-08-02
+ * @since 2019-08-02
  */
 @Component
 public class ApplicationContextRegister implements ApplicationContextAware {

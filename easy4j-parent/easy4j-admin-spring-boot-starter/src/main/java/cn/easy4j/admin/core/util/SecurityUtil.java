@@ -13,9 +13,6 @@ public class SecurityUtil {
 
     private SecurityUtil() {}
 
-    /**
-     * 获取当前登陆用户
-     */
     public static LoginUser getLoginUser() {
         try {
             return (LoginUser) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
@@ -24,9 +21,6 @@ public class SecurityUtil {
         }
     }
 
-    /**
-     * 获取当前登陆用户的ID
-     */
     public static Long getLoginUserId() {
         try {
             return ((LoginUser) SecurityContextHolder.getContext().getAuthentication().getPrincipal()).getId();

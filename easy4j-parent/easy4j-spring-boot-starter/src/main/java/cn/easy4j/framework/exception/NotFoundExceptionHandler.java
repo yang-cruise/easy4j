@@ -20,7 +20,7 @@ import java.util.Objects;
  * 处理404异常
  *
  * @author yangzongmin
- * @date 2019-08-14
+ * @since 2019-08-14
  */
 @Slf4j
 @RestController

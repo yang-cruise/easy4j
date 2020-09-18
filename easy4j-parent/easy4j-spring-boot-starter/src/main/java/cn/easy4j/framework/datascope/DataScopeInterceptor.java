@@ -58,9 +58,6 @@ public class DataScopeInterceptor implements Interceptor {
         return invocation.proceed();
     }
 
-    /**
-     * 查找参数是否包括DataScope对象
-     */
     public DataScope findDataScopeObject(Object parameterObject) {
         if (parameterObject instanceof DataScope) {
             return (DataScope) parameterObject;

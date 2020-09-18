@@ -9,7 +9,7 @@ import java.util.List;
 
 /**
  * @author yangzongmin
- * @date 2019-08-21
+ * @since 2019-08-21
  */
 @Component
 public class SysDictItemInitializer extends BaseDbInitializer {

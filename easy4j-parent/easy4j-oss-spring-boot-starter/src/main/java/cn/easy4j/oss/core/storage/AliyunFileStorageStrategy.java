@@ -1,8 +1,7 @@
-package cn.easy4j.oss.core.storage.impl;
+package cn.easy4j.oss.core.storage;
 
 import cn.easy4j.common.exception.BusinessException;
 import cn.easy4j.oss.config.properties.Easy4jOssProperties;
-import cn.easy4j.oss.core.storage.FileStorage;
 import cn.easy4j.oss.core.util.FileUtil;
 import com.aliyun.oss.ClientException;
 import com.aliyun.oss.OSSClient;
@@ -22,13 +21,13 @@ import java.io.InputStream;
  * @author ChenYichen
  */
 @Slf4j
-public class FileStorageAliyunImpl implements FileStorage {
+public class AliyunFileStorageStrategy implements FileStorageStrategy {
 
     private final Easy4jOssProperties.Aliyun aliyun;
 
     private final OSSClient ossClient;
 
-    public FileStorageAliyunImpl(Easy4jOssProperties.Aliyun aliyun, OSSClient ossClient) {
+    public AliyunFileStorageStrategy(Easy4jOssProperties.Aliyun aliyun, OSSClient ossClient) {
         this.aliyun = aliyun;
         this.ossClient = ossClient;
     }

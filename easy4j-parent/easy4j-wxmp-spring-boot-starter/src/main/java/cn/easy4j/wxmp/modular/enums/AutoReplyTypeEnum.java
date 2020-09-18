@@ -4,7 +4,7 @@ import lombok.AllArgsConstructor;
 
 /**
  * @author ChenYichen
- * @date 2020/3/24
+ * @since 2020/3/24
  */
 @AllArgsConstructor
 public enum AutoReplyTypeEnum {

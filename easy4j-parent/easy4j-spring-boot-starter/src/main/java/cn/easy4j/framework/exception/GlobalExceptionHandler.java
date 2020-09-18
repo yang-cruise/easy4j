@@ -29,7 +29,7 @@ import java.util.Objects;
 
 /**
  * @author yangzongmin
- * @date 2019-07-19
+ * @since 2019-07-19
  */
 @Slf4j
 @RestControllerAdvice
@@ -70,27 +70,18 @@ public class GlobalExceptionHandler {
         });
     }
 
-    /**
-     * 拦截业务异常
-     */
     @ExceptionHandler(BusinessException.class)
     public Result<Object> handBusinessException(BusinessException e, HttpServletRequest request) {
         log.info("请求路径：{}，请求参数：{}，业务异常：{}", request.getRequestURI(), JacksonUtil.toJson(request.getParameterMap()), e.getMsg());
         return new FailedResult<>(e.getCode(), e.getMsg());
     }
 
-    /**
-     * 拦截服务异常
-     */
     @ExceptionHandler(ServiceException.class)
     public Result<Object> handServiceException(ServiceException e, HttpServletRequest request) {
         log.info("请求路径：{}，请求参数：{}，服务异常：{}", request.getRequestURI(), JacksonUtil.toJson(request.getParameterMap()), e.getMsg());
         return new FailedResult<>(e.getCode(), e.getMsg());
     }
 
-    /**
-     * 拦截Assert非法的参数异常
-     */
     @ExceptionHandler(IllegalArgumentException.class)
     public Result<Object> handIllegalArgumentException(IllegalArgumentException e, HttpServletRequest request) {
         log.error("请求路径：{}，请求参数：{}，未知异常：", request.getRequestURI(), JacksonUtil.toJson(request.getParameterMap()), e);

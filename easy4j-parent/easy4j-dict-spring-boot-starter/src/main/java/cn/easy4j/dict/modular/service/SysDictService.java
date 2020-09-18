@@ -23,7 +23,7 @@ import java.util.Set;
 
 /**
  * @author yangzongmin
- * @date 2019-08-23
+ * @since 2019-08-23
  */
 @Service
 public class SysDictService extends ServiceImpl<SysDictMapper, SysDict> {

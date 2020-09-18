@@ -8,7 +8,7 @@ import java.util.List;
 
 /**
  * @author ChenYichen
- * @date 2020/4/19
+ * @since 2020/4/19
  */
 @Data
 public class TemplateMsgVO {

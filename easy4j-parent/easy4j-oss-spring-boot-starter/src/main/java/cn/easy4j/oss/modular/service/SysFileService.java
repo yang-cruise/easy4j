@@ -1,7 +1,7 @@
 package cn.easy4j.oss.modular.service;
 
 import cn.easy4j.common.exception.BusinessException;
-import cn.easy4j.oss.core.storage.FileStorage;
+import cn.easy4j.oss.core.storage.FileStorageStrategy;
 import cn.easy4j.oss.core.util.FileUtil;
 import cn.easy4j.oss.modular.entity.SysFile;
 import cn.easy4j.oss.modular.mapper.SysFileMapper;
@@ -25,7 +25,7 @@ import java.util.UUID;
 public class SysFileService extends ServiceImpl<SysFileMapper, SysFile> {
 
     @Resource
-    private FileStorage fileStorage;
+    private FileStorageStrategy fileStorageStrategy;
 
     @Transactional(rollbackFor = Exception.class)
     public SysFile saveAndUpload(@NonNull MultipartFile file) {
@@ -33,7 +33,7 @@ public class SysFileService extends ServiceImpl<SysFileMapper, SysFile> {
         String fileSuffix = FileUtil.getFileSuffix(originalFilename);
         String storageName = UUID.randomUUID() + "." + fileSuffix;
         try (InputStream inputStream = file.getInputStream()) {
-            fileStorage.saveFile(storageName, inputStream);
+            fileStorageStrategy.saveFile(storageName, inputStream);
         } catch (IOException e) {
             throw new BusinessException("读取文件失败");
         }

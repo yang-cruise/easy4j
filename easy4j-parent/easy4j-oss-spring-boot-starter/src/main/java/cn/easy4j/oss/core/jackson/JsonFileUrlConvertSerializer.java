@@ -1,7 +1,7 @@
 package cn.easy4j.oss.core.jackson;
 
 import cn.easy4j.framework.util.ApplicationUtil;
-import cn.easy4j.oss.core.storage.FileStorage;
+import cn.easy4j.oss.core.storage.FileStorageStrategy;
 import com.fasterxml.jackson.core.JsonGenerator;
 import com.fasterxml.jackson.databind.BeanProperty;
 import com.fasterxml.jackson.databind.JsonMappingException;
@@ -54,8 +54,8 @@ public class JsonFileUrlConvertSerializer extends StdScalarSerializer<String> im
     public void serialize(String value, JsonGenerator gen, SerializerProvider provider) throws IOException {
         gen.writeObject(value);
         if (Objects.nonNull(value)) {
-            FileStorage fileStorage = ApplicationUtil.getBean(FileStorage.class);
-            gen.writeStringField(this.fieldName, fileStorage.getFileUrl(value));
+            FileStorageStrategy fileStorageStrategy = ApplicationUtil.getBean(FileStorageStrategy.class);
+            gen.writeStringField(this.fieldName, fileStorageStrategy.getFileUrl(value));
         }
     }
 

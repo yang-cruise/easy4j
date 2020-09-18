@@ -23,7 +23,7 @@ import java.util.*;
 
 /**
  * @author yangzongmin
- * @date 2019-08-13
+ * @since 2019-08-13
  */
 @Service
 public class SysMenuService extends ServiceImpl<SysMenuMapper, SysMenu> {
@@ -98,9 +98,6 @@ public class SysMenuService extends ServiceImpl<SysMenuMapper, SysMenu> {
         }
     }
 
-    /**
-     * 得到子节点列表
-     */
     private List<SysMenu> getChildList(final List<SysMenu> sysMenus, final SysMenu sysMenu) {
         List<SysMenu> resultList = new ArrayList<>();
         for (SysMenu child : sysMenus) {
@@ -111,9 +108,6 @@ public class SysMenuService extends ServiceImpl<SysMenuMapper, SysMenu> {
         return resultList;
     }
 
-    /**
-     * 判断是否有子节点
-     */
     private boolean hasChild(final List<SysMenu> sysMenus, final SysMenu sysMenu) {
         List<SysMenu> childList = getChildList(sysMenus, sysMenu);
         return !CollectionUtils.isEmpty(childList);

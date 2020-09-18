@@ -11,7 +11,7 @@ import java.util.TimerTask;
 /**
  * 微信公众号模板消息发送任务
  * @author yangzongmin
- * @date 2019-04-21
+ * @since 2019-04-21
  */
 @Slf4j
 public class WxMpTemplateMsgTask extends TimerTask {

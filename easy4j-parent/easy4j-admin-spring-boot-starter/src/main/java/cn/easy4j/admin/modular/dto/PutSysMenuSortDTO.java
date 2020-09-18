@@ -1,6 +1,6 @@
 package cn.easy4j.admin.modular.dto;/*
  * @author ChenYichen
- * @date 2020-03-29
+ * @since 2020-03-29
  */
 
 import io.swagger.annotations.ApiModel;

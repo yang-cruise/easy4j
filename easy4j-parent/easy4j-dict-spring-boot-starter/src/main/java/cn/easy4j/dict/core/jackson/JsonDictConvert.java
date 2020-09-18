@@ -21,11 +21,13 @@ public @interface JsonDictConvert {
 
     /**
      * 字典编码，对应 sys_dict.code
+     * @return 字典编码
      */
     String code();
 
     /**
-     * json序列化时新增的字段名称，默认在原字段名后追加Text，例：orderStatusText
+     * json序列化时新增的字段名，默认在原字段名后追加Text，例：orderStatusText
+     * @return 新增的字段名
      */
     String fieldName() default "";
 

@@ -22,6 +22,7 @@ public @interface JsonFileUrlConvert {
 
     /**
      * json序列化时新增的字段名称，默认在原字段名后追加FileUrl，例：avatarFileUrl
+     * @return 字段名
      */
     String fieldName() default "";
 

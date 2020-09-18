@@ -24,7 +24,7 @@ import java.util.Objects;
 
 /**
  * @author ChenYichen
- * @date 2020/3/23
+ * @since 2020/3/23
  */
 @Api(tags = "微信公众号授权")
 @Slf4j

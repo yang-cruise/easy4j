@@ -14,7 +14,7 @@ import java.security.cert.X509Certificate;
 
 /**
  * @author yangzongmin
- * @date 2019-08-06
+ * @since 2019-08-06
  */
 @Slf4j
 public class HttpsClientRequestFactory extends SimpleClientHttpRequestFactory {

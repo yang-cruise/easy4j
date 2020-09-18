@@ -10,7 +10,7 @@ import java.util.concurrent.TimeUnit;
 /**
  * 微信公众号模板消息发送管理器
  * @author yangzongmin
- * @date 2019-04-21
+ * @since 2019-04-21
  */
 public class WxMpTemplateMsgManager {
 

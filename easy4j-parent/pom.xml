@@ -7,6 +7,32 @@
     <artifactId>easy4j-parent</artifactId>
     <packaging>pom</packaging>
     <version>0.5.0.RELEASE</version>
+    <name>easy4j</name>
+    <description>Easy4j is a lightweight Java Web Framework and reusable components.</description>
+    <url>https://www.easy4j.cn</url>
+    <licenses>
+        <license>
+            <name>The Apache Software License, Version 2.0</name>
+            <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+        </license>
+    </licenses>
+    <scm>
+        <connection>scm:git@github.com:yang-cruise/easy4j.git</connection>
+        <developerConnection>scm:git@github.com:yang-cruise/easy4j.git</developerConnection>
+        <url>https://github.com/yang-cruise/easy4j</url>
+    </scm>
+    <developers>
+        <developer>
+            <id>yang-cruise</id>
+            <name>yangzongmin</name>
+            <email>yang_cruise@126.com</email>
+        </developer>
+        <developer>
+            <id>ChenYichener</id>
+            <name>chenyichen</name>
+            <email>chenyichenmail@163.com</email>
+        </developer>
+    </developers>
 
     <modules>
         <module>easy4j-spring-boot-starter</module>
@@ -176,23 +202,75 @@
         </dependencies>
     </dependencyManagement>
 
-    <distributionManagement>
-        <repository>
-            <id>releases</id>
-            <name>aliyun nexus</name>
-            <url>http://maven.aliyun.com/nexus/content/repositories/release</url>
-        </repository>
-        <snapshotRepository>
-            <id>snapshots</id>
-            <name>aliyun nexus</name>
-            <url>http://maven.aliyun.com/nexus/content/repositories/snapshots</url>
-        </snapshotRepository>
-    </distributionManagement>
+    <profiles>
+        <profile>
+            <id>release</id>
+            <build>
+                <plugins>
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-source-plugin</artifactId>
+                        <version>3.2.1</version>
+                        <executions>
+                            <execution>
+                                <phase>package</phase>
+                                <goals>
+                                    <goal>jar-no-fork</goal>
+                                </goals>
+                            </execution>
+                        </executions>
+                    </plugin>
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-javadoc-plugin</artifactId>
+                        <version>3.2.0</version>
+                        <configuration>
+                            <show>private</show>
+                            <nohelp>true</nohelp>
+                            <charset>UTF-8</charset>
+                            <encoding>UTF-8</encoding>
+                            <docencoding>UTF-8</docencoding>
+                        </configuration>
+                        <executions>
+                            <execution>
+                                <phase>package</phase>
+                                <goals>
+                                    <goal>jar</goal>
+                                </goals>
+                            </execution>
+                        </executions>
+                    </plugin>
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-gpg-plugin</artifactId>
+                        <version>1.6</version>
+                        <executions>
+                            <execution>
+                                <phase>verify</phase>
+                                <goals>
+                                    <goal>sign</goal>
+                                </goals>
+                            </execution>
+                        </executions>
+                    </plugin>
+                </plugins>
+            </build>
+            <distributionManagement>
+                <repository>
+                    <id>sonatype-nexus-staging</id>
+                    <url>https://oss.sonatype.org/service/local/staging/deploy/maven2</url>
+                </repository>
+                <snapshotRepository>
+                    <id>sonatype-nexus-snapshots</id>
+                    <url>https://oss.sonatype.org/content/repositories/snapshots</url>
+                </snapshotRepository>
+            </distributionManagement>
+        </profile>
+    </profiles>
 
     <repositories>
         <repository>
-            <id>public</id>
-            <name>aliyun nexus</name>
+            <id>aliyun-nexus</id>
             <url>http://maven.aliyun.com/nexus/content/groups/public</url>
             <releases>
                 <enabled>true</enabled>
@@ -205,9 +283,8 @@
 
     <pluginRepositories>
         <pluginRepository>
-            <id>public</id>
-            <name>aliyun nexus</name>
-            <url>http://maven.aliyun.com/nexus/content/groups/public/</url>
+            <id>aliyun-nexus-plugin</id>
+            <url>http://maven.aliyun.com/nexus/content/groups/public</url>
             <releases>
                 <enabled>true</enabled>
             </releases>

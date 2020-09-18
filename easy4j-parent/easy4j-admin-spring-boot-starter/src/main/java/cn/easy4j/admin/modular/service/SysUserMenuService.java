@@ -7,7 +7,7 @@ import org.springframework.stereotype.Service;
 
 /**
  * @author yangzongmin
- * @date 2019-07-25
+ * @since 2019-07-25
  */
 @Service
 public class SysUserMenuService extends ServiceImpl<SysUserMenuMapper, SysUserMenu> {

@@ -10,7 +10,7 @@ import java.util.List;
 
 /**
  * @author ChenYichen
- * @date 2020年3月23日
+ * @since 2020年3月23日
  */
 @Component
 public class SysWxMpUserInitializer extends BaseDbInitializer {

@@ -1,7 +1,7 @@
 package cn.easy4j.oss.modular.controller;
 
-import cn.easy4j.oss.core.storage.FileStorage;
-import cn.easy4j.oss.core.storage.impl.FileStorageLocalImpl;
+import cn.easy4j.oss.core.storage.FileStorageStrategy;
+import cn.easy4j.oss.core.storage.LocalFileStorageStrategy;
 import cn.easy4j.oss.modular.entity.SysFile;
 import cn.easy4j.oss.modular.service.SysFileService;
 import io.swagger.annotations.Api;
@@ -36,7 +36,7 @@ public class SysFileController {
     private SysFileService sysFileService;
 
     @Resource
-    private FileStorage fileStorage;
+    private FileStorageStrategy fileStorageStrategy;
 
     private static final Integer RETURN_TYPE_URL = 2;
 
@@ -45,17 +45,17 @@ public class SysFileController {
     @PostMapping
     public String post(@RequestParam MultipartFile file, @RequestParam(required = false) Integer returnType) {
         SysFile sysFile = sysFileService.saveAndUpload(file);
-        return Objects.equals(returnType, RETURN_TYPE_URL) ? fileStorage.getFileUrl(sysFile.getFileStorageName()) : sysFile.getFileStorageName();
+        return Objects.equals(returnType, RETURN_TYPE_URL) ? fileStorageStrategy.getFileUrl(sysFile.getFileStorageName()) : sysFile.getFileStorageName();
     }
 
     @ApiOperation("获得文件流")
     @GetMapping("/stream/{storageName}")
     public void getStream(@PathVariable String storageName, HttpServletResponse response) {
-        if (fileStorage instanceof FileStorageLocalImpl) {
+        if (fileStorageStrategy instanceof LocalFileStorageStrategy) {
             response.setContentType(MediaType.APPLICATION_OCTET_STREAM_VALUE);
             response.setHeader(HttpHeaders.CONTENT_DISPOSITION, "attachment; filename=" + storageName);
 
-            byte[] fileBytes = fileStorage.getFileBytes(storageName);
+            byte[] fileBytes = fileStorageStrategy.getFileBytes(storageName);
             try (OutputStream out = response.getOutputStream()) {
                 out.write(fileBytes);
             } catch (IOException e) {
@@ -64,7 +64,7 @@ public class SysFileController {
         } else {
             // 非本地存储时，直接重定向，避免从服务器再读取一次文件流
             try {
-                response.sendRedirect(fileStorage.getFileUrl(storageName));
+                response.sendRedirect(fileStorageStrategy.getFileUrl(storageName));
             } catch (IOException e) {
                 log.error("重定向异常：{}", e.getMessage());
             }
@@ -75,7 +75,7 @@ public class SysFileController {
     @GetMapping("/base64/{storageName}")
     public String getBase64(@PathVariable String storageName) {
         try {
-            byte[] fileBytes = fileStorage.getFileBytes(storageName);
+            byte[] fileBytes = fileStorageStrategy.getFileBytes(storageName);
             return Base64.getEncoder().encodeToString(fileBytes);
         } catch (Exception e) {
             log.error("读取文件异常：{}", e.getMessage());

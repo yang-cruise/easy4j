@@ -14,7 +14,7 @@ import java.util.Objects;
  * Spring Application 工具类
  *
  * @author yangzongmin
- * @date 2019-08-02
+ * @since 2019-08-02
  */
 @NoArgsConstructor(access = AccessLevel.PRIVATE)
 public class ApplicationUtil {

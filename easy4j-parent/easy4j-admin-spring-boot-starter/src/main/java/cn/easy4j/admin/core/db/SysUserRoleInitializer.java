@@ -11,7 +11,7 @@ import java.util.List;
  * 用户与角色关联表初始化脚本
  *
  * @author yangzongmin
- * @date 2019-07-19
+ * @since 2019-07-19
  */
 @Component
 public class SysUserRoleInitializer extends BaseDbInitializer {

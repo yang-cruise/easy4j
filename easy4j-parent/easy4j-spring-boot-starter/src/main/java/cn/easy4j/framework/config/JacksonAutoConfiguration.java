@@ -24,7 +24,7 @@ import java.time.format.DateTimeFormatter;
 
 /**
  * @author ChenYichen
- * @date 2020/3/10
+ * @since 2020/3/10
  */
 @Configuration
 public class JacksonAutoConfiguration {

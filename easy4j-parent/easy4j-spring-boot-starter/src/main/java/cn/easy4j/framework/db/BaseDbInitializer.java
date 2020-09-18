@@ -16,7 +16,7 @@ import java.util.Map;
  * 数据库初始化，可初始化表，校验字段，校验表名是否存在等
  * 注意：实现类必须添加@Component注解
  * @author yangzongmin
- * @date 2019-07-19
+ * @since 2019-07-19
  */
 @Slf4j
 public abstract class BaseDbInitializer {
@@ -97,6 +97,7 @@ public abstract class BaseDbInitializer {
 
     /**
      * 反射获取字段的所有字段名称，包含父类的所有字段
+     * @return 所有字段名，包含父类字段
      */
     private List<String> getClassFields() {
         ArrayList<String> filedNamesUnderlineCase = new ArrayList<>();
@@ -114,6 +115,7 @@ public abstract class BaseDbInitializer {
 
     /**
      * 获取表的字段
+     * @return 获取表字段SQL语句
      */
     private String showColumnsSql() {
         return "SHOW COLUMNS FROM " + this.getTableName();

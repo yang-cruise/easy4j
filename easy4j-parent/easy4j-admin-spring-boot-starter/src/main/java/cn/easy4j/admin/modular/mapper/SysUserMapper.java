@@ -15,7 +15,7 @@ import java.util.Set;
  * 系统管理用户表 Mapper 接口
  *
  * @author yangzongmin
- * @date 2019-07-19
+ * @since 2019-07-19
  */
 @Mapper
 public interface SysUserMapper extends BaseMapper<SysUser> {

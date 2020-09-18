@@ -9,7 +9,7 @@ import lombok.EqualsAndHashCode;
  * 业务异常
  *
  * @author yangzongmin
- * @date 2019-07-19
+ * @since 2019-07-19
  */
 @Data
 @EqualsAndHashCode(callSuper = true)

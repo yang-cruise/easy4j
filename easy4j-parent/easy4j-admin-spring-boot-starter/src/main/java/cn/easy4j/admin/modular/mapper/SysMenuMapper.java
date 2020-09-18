@@ -13,7 +13,7 @@ import java.util.Set;
 
 /**
  * @author yangzongmin
- * @date 2019-08-13
+ * @since 2019-08-13
  */
 @Mapper
 public interface SysMenuMapper extends BaseMapper<SysMenu> {

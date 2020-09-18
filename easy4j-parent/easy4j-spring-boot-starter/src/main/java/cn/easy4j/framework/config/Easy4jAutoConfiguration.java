@@ -8,7 +8,7 @@ import org.springframework.context.annotation.PropertySource;
 
 /**
  * @author yangzongmin
- * @date 2019-08-01
+ * @since 2019-08-01
  */
 @Configuration
 @ComponentScan("cn.easy4j.framework")
