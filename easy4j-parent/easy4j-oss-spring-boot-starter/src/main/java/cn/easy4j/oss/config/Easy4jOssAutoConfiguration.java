@@ -20,13 +20,13 @@ public class Easy4jOssAutoConfiguration {
 
     @Bean
     @ConfigurationProperties(prefix = "easy4j.oss")
-    public Easy4jOssProperties ossAliyunProperties() {
+    public Easy4jOssProperties easy4jOssProperties() {
         return new Easy4jOssProperties();
     }
 
     @Bean
     @ConditionalOnMissingBean(FileStorageStrategy.class)
-    public FileStorageStrategy fileStorage(Easy4jOssProperties easy4jOssProperties) {
+    public FileStorageStrategy fileStorageStrategy(Easy4jOssProperties easy4jOssProperties) {
         return new LocalFileStorageStrategy(easy4jOssProperties.getLocal());
     }
 }
