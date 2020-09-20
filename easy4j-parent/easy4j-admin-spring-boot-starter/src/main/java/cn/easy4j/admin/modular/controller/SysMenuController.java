@@ -56,7 +56,7 @@ public class SysMenuController extends BaseController {
     @ApiOperation(value = "新增菜单")
     @PostMapping
     @PreAuthorize("hasPermission('菜单管理', '新增菜单', 'sys:menu:insert')")
-    public Boolean delete(@Validated @RequestBody PostSysMenuDTO dto) {
+    public Boolean post(@Validated @RequestBody PostSysMenuDTO dto) {
         sysUserCacheService.clearCacheAll();
         return sysMenuService.insertSysMenu(dto);
     }
