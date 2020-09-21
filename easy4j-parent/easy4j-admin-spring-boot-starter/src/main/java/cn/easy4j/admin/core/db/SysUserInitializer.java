@@ -35,7 +35,7 @@ public class SysUserInitializer extends BaseDbInitializer {
                 "  `modify_password` tinyint(3) NOT NULL DEFAULT '0' COMMENT '是否修改初始密码：0 未修改 | 1 已修改'," +
                 "  `is_deleted` tinyint(3) NOT NULL DEFAULT '0'," +
                 "  PRIMARY KEY (`id`)," +
-                "  UNIQUE KEY `uk_account` (`account`)," +
+                "  KEY `idx_account` (`account`) USING BTREE," +
                 "  KEY `idx_dept_id` (`dept_id`) USING BTREE" +
                 ") ENGINE=InnoDB AUTO_INCREMENT=18 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci COMMENT='系统管理用户表';";
     }
