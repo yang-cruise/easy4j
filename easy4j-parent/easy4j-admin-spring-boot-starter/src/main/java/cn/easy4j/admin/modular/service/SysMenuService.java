@@ -87,7 +87,7 @@ public class SysMenuService extends ServiceImpl<SysMenuMapper, SysMenu> {
     private void recursionSetSubSysMenuList(final List<SysMenu> sysMenus, SysMenu sysMenu) {
         // 得到子节点列表
         List<SysMenu> childList = getChildList(sysMenus, sysMenu);
-        sysMenu.setSubSysMenuList(childList);
+        sysMenu.setChildren(childList);
         for (SysMenu child : childList) {
             if (hasChild(sysMenus, child)) {
                 // 判断是否有子节点
@@ -157,7 +157,7 @@ public class SysMenuService extends ServiceImpl<SysMenuMapper, SysMenu> {
                     newList.add(c);
                 });
         // 将子级数据设置到父级数据中
-        sysMenu.setSubSysMenuList(newList);
+        sysMenu.setChildren(newList);
     }
 
     public Boolean deleteByIds(Set<Long> ids) {
