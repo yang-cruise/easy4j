@@ -55,12 +55,6 @@ public class SysMenu implements Serializable {
     @ApiModelProperty(value = "图标")
     private String icon;
 
-    @ApiModelProperty(value = "router")
-    private String component;
-
-    @ApiModelProperty(value = "是否展示")
-    private Boolean visible;
-
     /**
      * 子菜单列表
      */

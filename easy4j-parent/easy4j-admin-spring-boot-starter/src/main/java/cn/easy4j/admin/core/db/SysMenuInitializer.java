@@ -27,8 +27,6 @@ public class SysMenuInitializer extends BaseDbInitializer {
                 "  `type` char(1) NOT NULL COMMENT '菜单类型，D-目录，M-菜单，B-按钮'," +
                 "  `perms` varchar(128) NOT NULL DEFAULT '' COMMENT '权限标识'," +
                 "  `icon` varchar(64) NOT NULL DEFAULT '' COMMENT '图标'," +
-                "  `component` varchar(64) NOT NULL DEFAULT '' COMMENT '前端文件位置',\n" +
-                "  `visible` tinyint(3) NOT NULL DEFAULT '1' COMMENT '是否展示',\n" +
                 "  PRIMARY KEY (`id`)," +
                 "  KEY `idx_sort` (`sort`)" +
                 ") ENGINE=InnoDB AUTO_INCREMENT=1001 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci COMMENT='菜单表';";

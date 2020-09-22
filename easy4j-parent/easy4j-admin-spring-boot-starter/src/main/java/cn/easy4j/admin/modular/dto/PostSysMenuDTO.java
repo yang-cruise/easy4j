@@ -44,10 +44,4 @@ public class PostSysMenuDTO {
     @ApiModelProperty(value = "图标")
     private String icon;
 
-    @ApiModelProperty(value = "文件路径")
-    private String component;
-
-    @ApiModelProperty(value = "是否展示")
-    private Boolean visible;
-
 }
