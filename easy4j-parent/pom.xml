@@ -40,7 +40,6 @@
         <module>easy4j-admin-spring-boot-starter</module>
         <module>easy4j-oss-spring-boot-starter</module>
         <module>easy4j-dict-spring-boot-starter</module>
-        <module>easy4j-wxmp-spring-boot-starter</module>
     </modules>
 
     <properties>
@@ -59,7 +58,6 @@
         <springfox-swagger.version>2.9.2</springfox-swagger.version>
         <swagger.version>1.5.22</swagger.version>
         <aliyun-oss.version>3.10.0</aliyun-oss.version>
-        <weixin-java.version>3.8.7.B</weixin-java.version>
         <easy-captcha.version>1.6.2</easy-captcha.version>
     </properties>
 
@@ -70,11 +68,6 @@
             <dependency>
                 <groupId>cn.easy4j</groupId>
                 <artifactId>easy4j-common</artifactId>
-                <version>${easy4j.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>cn.easy4j</groupId>
-                <artifactId>easy4j-wxmp-spring-boot-starter</artifactId>
                 <version>${easy4j.version}</version>
             </dependency>
             <dependency>
@@ -171,11 +164,6 @@
                 <groupId>com.aliyun.oss</groupId>
                 <artifactId>aliyun-sdk-oss</artifactId>
                 <version>${aliyun-oss.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>com.github.binarywang</groupId>
-                <artifactId>weixin-java-mp</artifactId>
-                <version>${weixin-java.version}</version>
             </dependency>
             <dependency>
                 <groupId>com.github.whvcse</groupId>
