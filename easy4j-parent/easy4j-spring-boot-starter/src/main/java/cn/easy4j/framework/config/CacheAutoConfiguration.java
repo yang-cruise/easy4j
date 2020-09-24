@@ -39,7 +39,7 @@ public class CacheAutoConfiguration {
     @Bean("checkRepeatSubmitCache")
     @ConditionalOnMissingBean(name = "checkRepeatSubmitCache")
     public Cache checkRepeatSubmitCache() {
-        return new CaffeineCache(CacheConstant.CHECK_REPEAT_SUBMIT, Caffeine.newBuilder().expireAfterWrite(30L, TimeUnit.SECONDS).build());
+        return new CaffeineCache(CacheConstant.CHECK_REPEAT_SUBMIT, Caffeine.newBuilder().expireAfterWrite(6L, TimeUnit.SECONDS).build());
     }
 
 }

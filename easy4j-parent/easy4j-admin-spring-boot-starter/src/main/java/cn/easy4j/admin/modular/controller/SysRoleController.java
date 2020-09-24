@@ -7,6 +7,7 @@ import cn.easy4j.admin.modular.dto.PutSysRoleDTO;
 import cn.easy4j.admin.modular.entity.SysRole;
 import cn.easy4j.admin.modular.service.SysRoleMenuService;
 import cn.easy4j.admin.modular.service.SysRoleService;
+import cn.easy4j.framework.annotation.CheckRepeatSubmit;
 import com.baomidou.mybatisplus.core.metadata.IPage;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
@@ -56,8 +57,9 @@ public class SysRoleController extends BaseController {
 
     @ApiOperation(value = "新增角色")
     @PostMapping
+    @CheckRepeatSubmit
     @PreAuthorize("hasPermission('角色管理', '新增角色', 'sys:role:insert')")
-    public Boolean insert(@Validated @RequestBody PostSysRoleDTO postSysRoleDTO) {
+    public Boolean post(@Validated @RequestBody PostSysRoleDTO postSysRoleDTO) {
         return sysRoleService.insertSysRole(postSysRoleDTO);
     }
 

@@ -7,6 +7,7 @@ import cn.easy4j.admin.modular.service.SysConfigService;
 import cn.easy4j.admin.modular.vo.LoginConfigVO;
 import cn.easy4j.admin.modular.vo.SiteConfigVO;
 import cn.easy4j.admin.modular.vo.WechatConfigVO;
+import cn.easy4j.framework.annotation.CheckRepeatSubmit;
 import cn.easy4j.framework.util.JacksonUtil;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
@@ -59,6 +60,7 @@ public class SysConfigController {
 
     @ApiOperation(value = "新增系统配置")
     @PostMapping
+    @CheckRepeatSubmit
     @PreAuthorize("hasPermission('系统配置', '新增配置', 'sys:config:insert')")
     public Boolean post(@RequestBody PostSysConfigDTO dto) {
         return sysConfigService.insertSysConfig(dto);

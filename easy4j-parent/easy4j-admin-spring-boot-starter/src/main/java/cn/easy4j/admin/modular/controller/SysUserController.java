@@ -5,6 +5,7 @@ import cn.easy4j.admin.core.util.SecurityUtil;
 import cn.easy4j.admin.modular.dto.*;
 import cn.easy4j.admin.modular.service.SysUserService;
 import cn.easy4j.admin.modular.vo.SysUserVO;
+import cn.easy4j.framework.annotation.CheckRepeatSubmit;
 import com.baomidou.mybatisplus.core.metadata.IPage;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
@@ -52,6 +53,7 @@ public class SysUserController extends BaseController {
 
     @ApiOperation(value = "新增用户")
     @PostMapping
+    @CheckRepeatSubmit
     @PreAuthorize("hasPermission('用户管理', '新增用户', 'sys:user:insert')")
     public Boolean post(@Validated @RequestBody PostSysUserDTO dto) {
         return sysUserService.insertUser(dto);

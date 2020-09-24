@@ -5,6 +5,7 @@ import cn.easy4j.dict.modular.entity.SysDict;
 import cn.easy4j.dict.modular.entity.SysDictItem;
 import cn.easy4j.dict.modular.service.SysDictItemService;
 import cn.easy4j.dict.modular.service.SysDictService;
+import cn.easy4j.framework.annotation.CheckRepeatSubmit;
 import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import io.swagger.annotations.Api;
@@ -53,6 +54,7 @@ public class SysDictController {
 
     @ApiOperation(value = "新增字典")
     @PostMapping
+    @CheckRepeatSubmit
     @PreAuthorize("hasPermission('数据字典', '新增字典', 'sys:dict:insert')")
     public Boolean post(@Validated @RequestBody PostSysDictDTO dto) {
         return sysDictService.insertSysDict(dto);
@@ -60,6 +62,7 @@ public class SysDictController {
 
     @ApiOperation(value = "新增字典项")
     @PostMapping("/items")
+    @CheckRepeatSubmit
     @PreAuthorize("hasPermission('数据字典', '新增字典', 'sys:dict:insert')")
     public Boolean postItems(@Validated @RequestBody PostSysDictItemDTO dto) {
         return sysDictItemService.insertSysDictItem(dto);

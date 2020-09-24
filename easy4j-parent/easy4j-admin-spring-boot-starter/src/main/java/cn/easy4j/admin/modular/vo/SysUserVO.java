@@ -2,6 +2,7 @@ package cn.easy4j.admin.modular.vo;
 
 import cn.easy4j.admin.modular.entity.SysDept;
 import cn.easy4j.admin.modular.entity.SysRole;
+import cn.easy4j.dict.core.jackson.JsonDictConvert;
 import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.annotation.TableId;
 import com.fasterxml.jackson.annotation.JsonFormat;
@@ -55,6 +56,7 @@ public class SysUserVO implements Serializable {
     @ApiModelProperty(value = "生日")
     private LocalDate birthday;
 
+    @JsonDictConvert(code = "sys_user.sex")
     @ApiModelProperty(value = "性别 1男  2女")
     private String sex;
 

@@ -9,6 +9,7 @@ import cn.easy4j.admin.modular.dto.PutSysMenuSortDTO;
 import cn.easy4j.admin.modular.entity.SysMenu;
 import cn.easy4j.admin.modular.service.SysMenuService;
 import cn.easy4j.admin.modular.service.SysUserCacheService;
+import cn.easy4j.framework.annotation.CheckRepeatSubmit;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.security.access.prepost.PreAuthorize;
@@ -55,6 +56,7 @@ public class SysMenuController extends BaseController {
 
     @ApiOperation(value = "新增菜单")
     @PostMapping
+    @CheckRepeatSubmit
     @PreAuthorize("hasPermission('菜单管理', '新增菜单', 'sys:menu:insert')")
     public Boolean post(@Validated @RequestBody PostSysMenuDTO dto) {
         sysUserCacheService.clearCacheAll();

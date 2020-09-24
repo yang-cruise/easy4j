@@ -5,6 +5,7 @@ import cn.easy4j.admin.modular.dto.PostSysDeptDTO;
 import cn.easy4j.admin.modular.dto.PutSysDeptDTO;
 import cn.easy4j.admin.modular.entity.SysDept;
 import cn.easy4j.admin.modular.service.SysDeptService;
+import cn.easy4j.framework.annotation.CheckRepeatSubmit;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.security.access.prepost.PreAuthorize;
@@ -42,6 +43,7 @@ public class SysDeptController {
 
     @ApiOperation(value = "新增部门")
     @PostMapping
+    @CheckRepeatSubmit
     @PreAuthorize("hasPermission('用户管理', '新增部门', 'sys:dept:insert')")
     public Boolean post(@Validated @RequestBody PostSysDeptDTO dto) {
         return sysDeptService.insertSysDept(dto);
