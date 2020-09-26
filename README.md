@@ -23,7 +23,7 @@
 <parent>
     <groupId>org.springframework.boot</groupId>
     <artifactId>spring-boot-starter-parent</artifactId>
-    <version>{latest-version}</version>
+    <version>0.5.0.RELEASE</version>
     <relativePath/>
 </parent>
 ```
@@ -33,7 +33,7 @@
 <parent>
     <groupId>cn.easy4j</groupId>
     <artifactId>easy4j-admin-spring-boot-starter</artifactId>
-    <version>{latest-version}</version>
+    <version>0.5.0.RELEASE</version>
 </parent>
 ```
 
