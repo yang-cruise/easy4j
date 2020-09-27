@@ -34,14 +34,12 @@ public class SysMenuInitializer extends BaseDbInitializer {
 
     @Override
     protected List<String> getDataInitSql() {
-        return Arrays.asList("INSERT INTO `sys_menu`(`id`, `gmt_create`, `gmt_modified`, `name`, `parent_id`, `sort`, `url`, `type`, `perms`, `icon`) VALUES (1, '2020-02-22 17:57:03', '2020-02-22 17:57:03', '系统管理', 0, 98, '', 'D', '', 'el-icon-setting');",
-                "INSERT INTO `sys_menu`(`id`, `gmt_create`, `gmt_modified`, `name`, `parent_id`, `sort`, `url`, `type`, `perms`, `icon`) VALUES (2, '2020-02-22 17:57:23', '2020-02-22 17:57:23', '开发管理', 0, 99, '', 'D', '', 'el-icon-sugar');",
-                "INSERT INTO `sys_menu`(`id`, `gmt_create`, `gmt_modified`, `name`, `parent_id`, `sort`, `url`, `type`, `perms`, `icon`) VALUES (3, '2020-02-22 17:58:01', '2020-02-22 17:58:01', '用户管理', 1, 1, '/sys-user', 'M', '', '');",
-                "INSERT INTO `sys_menu`(`id`, `gmt_create`, `gmt_modified`, `name`, `parent_id`, `sort`, `url`, `type`, `perms`, `icon`) VALUES (4, '2020-02-22 17:58:24', '2020-02-22 17:59:06', '角色管理', 1, 2, '/sys-role', 'M', '', '');",
-                "INSERT INTO `sys_menu`(`id`, `gmt_create`, `gmt_modified`, `name`, `parent_id`, `sort`, `url`, `type`, `perms`, `icon`) VALUES (5, '2020-02-22 17:58:51', '2020-02-22 17:58:51', '菜单管理', 1, 3, '/sys-menu', 'M', '', '');",
-                "INSERT INTO `sys_menu`(`id`, `gmt_create`, `gmt_modified`, `name`, `parent_id`, `sort`, `url`, `type`, `perms`, `icon`) VALUES (6, '2020-02-22 17:59:37', '2020-02-22 17:59:37', '数据字典', 1, 4, '/sys-dict', 'M', '', '');",
-                "INSERT INTO `sys_menu`(`id`, `gmt_create`, `gmt_modified`, `name`, `parent_id`, `sort`, `url`, `type`, `perms`, `icon`) VALUES (7, '2020-02-22 17:59:37', '2020-02-22 17:59:37', '系统配置', 1, 4, '/sys-config', 'M', '', '');",
-                "INSERT INTO `sys_menu`(`id`, `gmt_create`, `gmt_modified`, `name`, `parent_id`, `sort`, `url`, `type`, `perms`, `icon`) VALUES (8, '2020-02-22 18:13:40', '2020-02-22 18:13:40', '表单生成', 2, 1, '/dev-create-form', 'M', '', '');");
+        return Arrays.asList("INSERT INTO `sys_menu`(`id`, `gmt_create`, `gmt_modified`, `name`, `parent_id`, `sort`, `url`, `type`, `perms`, `icon`) VALUES (1, '2020-02-22 17:57:03', '2020-02-22 17:57:03', '系统管理', 0, 1, '', 'D', '', 'el-icon-setting');",
+                "INSERT INTO `sys_menu`(`id`, `gmt_create`, `gmt_modified`, `name`, `parent_id`, `sort`, `url`, `type`, `perms`, `icon`) VALUES (2, '2020-02-22 17:58:01', '2020-02-22 17:58:01', '用户管理', 1, 1, '/sys/user', 'M', '', '');",
+                "INSERT INTO `sys_menu`(`id`, `gmt_create`, `gmt_modified`, `name`, `parent_id`, `sort`, `url`, `type`, `perms`, `icon`) VALUES (3, '2020-02-22 17:58:24', '2020-02-22 17:59:06', '角色管理', 1, 2, '/sys/role', 'M', '', '');",
+                "INSERT INTO `sys_menu`(`id`, `gmt_create`, `gmt_modified`, `name`, `parent_id`, `sort`, `url`, `type`, `perms`, `icon`) VALUES (4, '2020-02-22 17:58:51', '2020-02-22 17:58:51', '菜单管理', 1, 3, '/sys/menu', 'M', '', '');",
+                "INSERT INTO `sys_menu`(`id`, `gmt_create`, `gmt_modified`, `name`, `parent_id`, `sort`, `url`, `type`, `perms`, `icon`) VALUES (5, '2020-02-22 17:59:37', '2020-02-22 17:59:37', '数据字典', 1, 4, '/sys/dict', 'M', '', '');",
+                "INSERT INTO `sys_menu`(`id`, `gmt_create`, `gmt_modified`, `name`, `parent_id`, `sort`, `url`, `type`, `perms`, `icon`) VALUES (6, '2020-02-22 17:59:37', '2020-02-22 17:59:37', '系统配置', 1, 4, '/sys/config', 'M', '', '');");
     }
 
     @Override

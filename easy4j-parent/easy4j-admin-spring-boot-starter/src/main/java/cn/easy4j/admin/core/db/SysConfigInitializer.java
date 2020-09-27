@@ -30,7 +30,7 @@ public class SysConfigInitializer extends BaseDbInitializer {
 
     @Override
     protected List<String> getDataInitSql() {
-        return Arrays.asList("INSERT INTO `sys_config`(`config_key`, `config_content`) VALUES ('SITE_CONFIG', '{\"logo\": \"https://element.eleme.cn/favicon.ico\", \"beian\": \"粤ICP备12345678号-1\", \"slogan\": \"简单，美！\", \"siteName\": \"Easy4j\", \"copyright\": \"© 版权所有 2006-2020 深圳硕软技术有限公司\"}');",
+        return Arrays.asList("INSERT INTO `sys_config`(`config_key`, `config_content`) VALUES ('SITE_CONFIG', '{\"logo\": \"https://element.eleme.cn/favicon.ico\", \"beian\": \"粤ICP备12013459号-5\", \"slogan\": \"简单，美！\", \"siteName\": \"Easy4j\", \"copyright\": \"© 版权所有 2020-2021 easy4j.cn\"}');",
                 "INSERT INTO `sys_config`(`config_key`, `config_content`) VALUES ('LOGIN_CONFIG', '[{\"name\": \"密码登录\", \"sort\": 1, \"type\": \"account\", \"enable\": true, \"params\": {\"lockAccountCount\": 5, \"showCaptchaCount\": 3}}, {\"name\": \"短信登录\", \"sort\": 2, \"type\": \"sms\", \"enable\": false, \"params\": {\"appKey\": \"\", \"appSecret\": \"\"}}, {\"name\": \"微信登录\", \"sort\": 3, \"type\": \"wechat\", \"enable\": false, \"params\": {\"appId\": \"\", \"appSecret\": \"\", \"redirectUri\": \"\"}}]');");
     }
 
