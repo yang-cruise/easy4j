@@ -23,18 +23,20 @@
 <parent>
     <groupId>org.springframework.boot</groupId>
     <artifactId>spring-boot-starter-parent</artifactId>
-    <version>{latest-version}</version>
+    <version>0.5.0.RELEASE</version>
     <relativePath/>
 </parent>
 ```
 引入  `easy4j-admin-spring-boot-starter`  依赖：
 
 ```
-<parent>
-    <groupId>cn.easy4j</groupId>
-    <artifactId>easy4j-admin-spring-boot-starter</artifactId>
-    <version>{latest-version}</version>
-</parent>
+<dependencies>
+    <dependency>
+        <groupId>cn.easy4j</groupId>
+        <artifactId>easy4j-admin-spring-boot-starter</artifactId>
+        <version>0.5.0.RELEASE</version>
+    <dependency>
+</dependencies>
 ```
 
 
