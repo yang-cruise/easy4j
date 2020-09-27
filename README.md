@@ -30,11 +30,13 @@
 引入  `easy4j-admin-spring-boot-starter`  依赖：
 
 ```
-<parent>
-    <groupId>cn.easy4j</groupId>
-    <artifactId>easy4j-admin-spring-boot-starter</artifactId>
-    <version>0.5.0.RELEASE</version>
-</parent>
+<dependencies>
+    <dependency>
+        <groupId>cn.easy4j</groupId>
+        <artifactId>easy4j-admin-spring-boot-starter</artifactId>
+        <version>0.5.0.RELEASE</version>
+    <dependency>
+</dependencies>
 ```
 
 
