@@ -1,0 +1,16 @@
+server:
+  port: 6789
+
+spring:
+  profiles:
+    include: pro
+  datasource:
+    url: jdbc:mysql://127.0.0.1:3306/easy4j?useUnicode=true&characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&useSSL=true&serverTimezone=Asia/Shanghai
+    username: test
+    password: test
+    driver-class-name: com.mysql.cj.jdbc.Driver
+
+easy4j:
+  admin:
+    swagger:
+      enable: true
