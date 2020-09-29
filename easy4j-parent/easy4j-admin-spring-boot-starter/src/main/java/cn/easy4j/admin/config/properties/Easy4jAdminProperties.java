@@ -23,7 +23,6 @@ public class Easy4jAdminProperties {
     @Setter
     @Getter
     public static class Security {
-        private Boolean enable;
         private String[] ignoreUrls;
     }
 }
