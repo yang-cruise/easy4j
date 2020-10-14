@@ -84,8 +84,8 @@ public class GlobalExceptionHandler {
 
     @ExceptionHandler(IllegalArgumentException.class)
     public Result<Object> handIllegalArgumentException(IllegalArgumentException e, HttpServletRequest request) {
-        log.error("请求路径：{}，请求参数：{}，未知异常：", request.getRequestURI(), JacksonUtil.toJson(request.getParameterMap()), e);
-        return new FailedResult<>(HttpStatusEnum.INTERNAL_SERVER_ERROR.code(), e.getMessage());
+        log.info("请求路径：{}，请求参数：{}，参数错误：{}", request.getRequestURI(), JacksonUtil.toJson(request.getParameterMap()), e.getMessage());
+        return new FailedResult<>(HttpStatusEnum.PARAM_BAD.code(), e.getMessage());
     }
 
     @ExceptionHandler(Exception.class)
@@ -96,19 +96,19 @@ public class GlobalExceptionHandler {
 
     @ExceptionHandler(HttpRequestMethodNotSupportedException.class)
     public Result<Object> handException(HttpRequestMethodNotSupportedException e, HttpServletRequest request) {
-        log.error("请求路径：{}，请求参数：{}，请求类型：{}，请求方式错误：", request.getRequestURI(), JacksonUtil.toJson(request.getParameterMap()), request.getMethod(), e);
+        log.warn("请求路径：{}，请求参数：{}，请求类型：{}，不支持的请求方法：{}", request.getRequestURI(), JacksonUtil.toJson(request.getParameterMap()), request.getMethod(), e.getMessage());
         return new FailedResult<>(HttpStatusEnum.METHOD_NOT_ALLOWED.code(), HttpStatusEnum.METHOD_NOT_ALLOWED.msg());
     }
 
     @ExceptionHandler(BindException.class)
     public Result<Object> handException(BindException e, HttpServletRequest request) {
-        log.error("请求路径：{}，请求参数：{}，请求类型：{}，请求参数错误：{}", request.getRequestURI(), JacksonUtil.toJson(request.getParameterMap()), request.getMethod(), e.getMessage());
+        log.warn("请求路径：{}，请求参数：{}，请求类型：{}，请求参数错误：{}", request.getRequestURI(), JacksonUtil.toJson(request.getParameterMap()), request.getMethod(), e.getMessage());
         return new FailedResult<>(HttpStatusEnum.PARAM_BAD.code(), e.getAllErrors().get(0).getDefaultMessage());
     }
 
     @ExceptionHandler(MethodArgumentNotValidException.class)
     public Result<Object> handException(MethodArgumentNotValidException e, HttpServletRequest request) {
-        log.error("请求路径：{}，请求参数：{}，请求类型：{}，请求参数错误：{}", request.getRequestURI(), JacksonUtil.toJson(request.getParameterMap()), request.getMethod(), e.getMessage());
+        log.warn("请求路径：{}，请求参数：{}，请求类型：{}，请求参数错误：{}", request.getRequestURI(), JacksonUtil.toJson(request.getParameterMap()), request.getMethod(), e.getMessage());
         FieldError error = e.getBindingResult().getFieldError();
         return new FailedResult<>(HttpStatusEnum.PARAM_BAD.code(), Objects.isNull(error) ? "参数校验失败" : error.getDefaultMessage());
     }
