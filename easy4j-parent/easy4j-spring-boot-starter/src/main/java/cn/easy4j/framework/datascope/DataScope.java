@@ -28,7 +28,7 @@ public class DataScope {
     }
 
     public DataScope(Set<Long> scopeIds) {
-        new DataScope(scopeIds, "dept_id");
+        this(scopeIds, "dept_id");
     }
 
     public DataScope(Set<Long> scopeIds, String scopeName) {
