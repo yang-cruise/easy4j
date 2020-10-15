@@ -1,5 +1,8 @@
 package cn.easy4j.admin.core.base;
 
+import cn.easy4j.admin.core.util.SecurityUtil;
+import cn.easy4j.admin.modular.service.SysDeptService;
+import cn.easy4j.framework.datascope.DataScope;
 import com.baomidou.mybatisplus.core.metadata.IPage;
 import com.baomidou.mybatisplus.core.metadata.OrderItem;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
@@ -9,6 +12,8 @@ import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.util.Collections;
+import java.util.HashSet;
+import java.util.Set;
 
 /**
  * @author yangzongmin
@@ -21,6 +26,9 @@ public abstract class BaseController {
 
     @Resource
     protected HttpServletResponse response;
+
+    @Resource
+    protected SysDeptService sysDeptService;
 
     protected <T> IPage<T> getPage() {
         Page<T> page = new Page<>();
@@ -41,4 +49,10 @@ public abstract class BaseController {
         }
         return page;
     }
+
+    protected DataScope getDataScope() {
+        Set<Long> deptIds = sysDeptService.querySubDept(SecurityUtil.getLoginUser().getDeptId(), new HashSet<>());
+        return new DataScope(deptIds);
+    }
+
 }
