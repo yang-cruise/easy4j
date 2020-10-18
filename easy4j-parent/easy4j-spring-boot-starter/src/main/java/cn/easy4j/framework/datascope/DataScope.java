@@ -24,7 +24,7 @@ public class DataScope {
     private Set<Long> scopeIds;
 
     public DataScope() {
-        new DataScope(Collections.emptySet());
+       this(Collections.emptySet());
     }
 
     public DataScope(Set<Long> scopeIds) {
