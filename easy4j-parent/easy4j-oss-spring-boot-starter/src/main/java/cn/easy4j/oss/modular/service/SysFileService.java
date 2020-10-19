@@ -12,6 +12,8 @@ import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.multipart.MultipartFile;
 
 import javax.annotation.Resource;
+import java.io.File;
+import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.UUID;
@@ -45,4 +47,21 @@ public class SysFileService extends ServiceImpl<SysFileMapper, SysFile> {
         return sysFileForInsert;
     }
 
+    @Transactional(rollbackFor = Exception.class)
+    public SysFile saveAndUpload(@NonNull File file) {
+        String originalFilename = file.getName();
+        String fileSuffix = FileUtil.getFileSuffix(originalFilename);
+        String storageName = UUID.randomUUID() + "." + fileSuffix;
+        try (InputStream inputStream = new FileInputStream(file)) {
+            fileStorageStrategy.saveFile(storageName, inputStream);
+        } catch (IOException e) {
+            throw new BusinessException("读取文件失败");
+        }
+
+        SysFile sysFileForInsert = new SysFile()
+                .setFileOriginName(originalFilename).setFileSuffix(fileSuffix)
+                .setFileSize(file.length()).setFileStorageName(storageName);
+        this.save(sysFileForInsert);
+        return sysFileForInsert;
+    }
 }
