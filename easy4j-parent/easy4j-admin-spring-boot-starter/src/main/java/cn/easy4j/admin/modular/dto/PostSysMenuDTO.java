@@ -7,7 +7,6 @@ import lombok.Setter;
 import lombok.ToString;
 
 import javax.validation.constraints.NotBlank;
-import javax.validation.constraints.NotNull;
 
 /**
  * @author ChenYichen
@@ -28,7 +27,6 @@ public class PostSysMenuDTO {
     @ApiModelProperty(value = "父菜单ID")
     private Long parentId;
 
-    @NotNull(message = "显示顺序不能为空")
     @ApiModelProperty(value = "显示顺序", required = true)
     private Integer sort;
 
