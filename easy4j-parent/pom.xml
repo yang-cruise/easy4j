@@ -6,7 +6,7 @@
     <groupId>cn.easy4j</groupId>
     <artifactId>easy4j-parent</artifactId>
     <packaging>pom</packaging>
-    <version>0.5.0.RELEASE</version>
+    <version>0.5.1.RELEASE</version>
     <name>easy4j</name>
     <description>Easy4j is a lightweight Java Web Framework and reusable components.</description>
     <url>https://www.easy4j.cn</url>
@@ -46,7 +46,7 @@
         <java.version>1.8</java.version>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <easy4j.version>0.5.0.RELEASE</easy4j.version>
+        <easy4j.version>0.5.1.RELEASE</easy4j.version>
         <spring-boot.version>2.3.1.RELEASE</spring-boot.version>
         <mybatis-plus.version>3.3.2</mybatis-plus.version>
         <velocity-engine-core.version>2.2</velocity-engine-core.version>

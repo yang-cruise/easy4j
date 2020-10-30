@@ -1,6 +1,7 @@
 package cn.easy4j.admin.modular.controller;
 
 import cn.easy4j.admin.core.base.BaseController;
+import cn.easy4j.admin.core.log.SysLog;
 import cn.easy4j.admin.core.util.SecurityUtil;
 import cn.easy4j.admin.modular.dto.*;
 import cn.easy4j.admin.modular.service.SysUserService;
@@ -74,6 +75,7 @@ public class SysUserController extends BaseController {
         return sysUserService.updatePasswordByUserId(userId, dto.getOriginPassword(), dto.getNewPassword());
     }
 
+    @SysLog(modular = "用户管理", entityId = "#dto.id", query = "@sysUserService.selectSysUserById(#dto.id)")
     @ApiOperation(value = "更新用户信息")
     @PutMapping
     @PreAuthorize("hasPermission('用户管理', '修改用户', 'sys:user:update')")
