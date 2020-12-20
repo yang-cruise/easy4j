@@ -31,14 +31,10 @@ public class SysDictInitializer extends BaseDbInitializer {
 
     @Override
     protected List<String> getDataInitSql() {
-        String sql = "INSERT INTO `sys_dict`(`id`, `gmt_create`, `gmt_modified`, `code`, `name`, `sort`, `description`, `is_deleted`) VALUES (1, '2019-08-21 17:17:53', '2019-08-21 17:25:38', 'sys', '系统配置', 1, '', 0);" +
-                "INSERT INTO `sys_dict`(`id`, `gmt_create`, `gmt_modified`, `code`, `name`, `sort`, `description`, `is_deleted`) VALUES (2, '2019-08-26 09:06:10', '2019-08-26 09:06:17', 'common', '公共配置', 2, '', 0);" +
-                "INSERT INTO `sys_dict`(`id`, `gmt_create`, `gmt_modified`, `code`, `name`, `sort`, `description`, `is_deleted`) VALUES (3, '2019-08-26 09:04:28', '2019-08-26 09:06:28', 'biz', '业务配置', 3, '', 0);" +
-                "INSERT INTO `sys_dict`(`id`, `gmt_create`, `gmt_modified`, `code`, `name`, `sort`, `description`, `is_deleted`) VALUES (21, '2019-08-21 18:05:00', '2019-08-26 09:07:47', 'common.is_deleted', '删除标识', 1, '', 0);" +
-                "INSERT INTO `sys_dict`(`id`, `gmt_create`, `gmt_modified`, `code`, `name`, `sort`, `description`, `is_deleted`) VALUES (31, '2019-08-21 17:28:31', '2019-08-26 09:09:13', 'sys_user', '系统用户', 1, '', 0);" +
-                "INSERT INTO `sys_dict`(`id`, `gmt_create`, `gmt_modified`, `code`, `name`, `sort`, `description`, `is_deleted`) VALUES (121, '2019-08-21 17:27:52', '2019-08-26 09:03:15', 'sys_user.status', '状态', 1, '', 0);" +
-                "INSERT INTO `sys_dict`(`id`, `gmt_create`, `gmt_modified`, `code`, `name`, `sort`, `description`, `is_deleted`) VALUES (122, '2019-08-26 09:03:49', '2019-08-26 09:03:49', 'sys_user.sex', '性别', 2, '', 0);" +
-                "INSERT INTO `sys_dict`(`id`, `gmt_create`, `gmt_modified`, `code`, `name`, `sort`, `description`, `is_deleted`) VALUES (1005, '2020-02-11 14:54:06', '2020-02-11 14:54:06', 'sys_menu.type', '菜单类型', 1, '', 0);";
+        String sql = "INSERT INTO `sys_dict`(`id`, `gmt_create`, `gmt_modified`, `code`, `name`, `sort`, `description`, `is_deleted`) VALUES (101, '2019-08-21 18:05:00', '2019-08-26 09:07:47', 'common.is_deleted', '删除标识', 1, '', 0);" +
+                "INSERT INTO `sys_dict`(`id`, `gmt_create`, `gmt_modified`, `code`, `name`, `sort`, `description`, `is_deleted`) VALUES (201, '2019-08-21 17:27:52', '2019-08-26 09:03:15', 'sys_user.status', '状态', 1, '', 0);" +
+                "INSERT INTO `sys_dict`(`id`, `gmt_create`, `gmt_modified`, `code`, `name`, `sort`, `description`, `is_deleted`) VALUES (202, '2019-08-26 09:03:49', '2019-08-26 09:03:49', 'sys_user.sex', '性别', 2, '', 0);" +
+                "INSERT INTO `sys_dict`(`id`, `gmt_create`, `gmt_modified`, `code`, `name`, `sort`, `description`, `is_deleted`) VALUES (203, '2020-02-11 14:54:06', '2020-02-11 14:54:06', 'sys_menu.type', '菜单类型', 1, '', 0);";
         return Arrays.asList(sql.split(";"));
     }
 

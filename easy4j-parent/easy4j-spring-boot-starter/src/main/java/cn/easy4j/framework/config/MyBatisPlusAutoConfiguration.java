@@ -15,7 +15,7 @@ import org.springframework.context.annotation.Configuration;
  * @since 2019-07-19
  */
 @Configuration
-@MapperScan("**.mapper")
+@MapperScan("cn.easy4j.**.mapper")
 @ConditionalOnProperty(prefix = "spring.datasource", name = "url")
 public class MyBatisPlusAutoConfiguration {
 

@@ -32,16 +32,16 @@ public class SysDictItemInitializer extends BaseDbInitializer {
 
     @Override
     protected List<String> getDataInitSql() {
-        String sql = "INSERT INTO `sys_dict_item` VALUES (1, '2019-08-21 17:33:25', '2019-08-21 18:06:39', 112, 'M', '男', 1, 0);" +
-                "INSERT INTO `sys_dict_item` VALUES (2, '2019-08-21 17:35:31', '2019-08-21 18:06:40', 112, 'F', '女', 2, 0);" +
-                "INSERT INTO `sys_dict_item` VALUES (3, '2019-08-21 17:58:00', '2019-08-21 18:06:25', 121, '0', '已删除', 1, 0);" +
-                "INSERT INTO `sys_dict_item` VALUES (4, '2019-08-21 17:58:19', '2019-08-21 18:06:29', 121, '1', '正常', 2, 0);" +
-                "INSERT INTO `sys_dict_item` VALUES (5, '2019-08-21 17:58:34', '2019-08-21 18:06:31', 121, '2', '冻结', 3, 0);" +
-                "INSERT INTO `sys_dict_item` VALUES (6, '2019-08-21 18:07:00', '2019-08-21 18:07:58', 111, '0', '未删除', 1, 0);" +
-                "INSERT INTO `sys_dict_item` VALUES (7, '2019-08-21 18:07:15', '2019-08-21 18:07:24', 111, '1', '已删除', 2, 0);" +
-                "INSERT INTO `sys_dict_item` VALUES (8, '2020-02-11 14:54:35', '2020-02-11 14:54:35', 1005, 'D', '目录', 1, 0);" +
-                "INSERT INTO `sys_dict_item` VALUES (9, '2020-02-11 14:54:46', '2020-02-11 14:54:46', 1005, 'M', '菜单', 2, 0);" +
-                "INSERT INTO `sys_dict_item` VALUES (10, '2020-02-11 14:54:59', '2020-02-11 14:54:59', 1005, 'B', '按钮', 3, 0);";
+        String sql = "INSERT INTO `sys_dict_item` VALUES (6, '2019-08-21 18:07:00', '2019-08-21 18:07:58', 101, '0', '未删除', 1, 0);" +
+                "INSERT INTO `sys_dict_item` VALUES (7, '2019-08-21 18:07:15', '2019-08-21 18:07:24', 101, '1', '已删除', 2, 0);" +
+                "INSERT INTO `sys_dict_item` VALUES (3, '2019-08-21 17:58:00', '2019-08-21 18:06:25', 201, '0', '已删除', 1, 0);" +
+                "INSERT INTO `sys_dict_item` VALUES (4, '2019-08-21 17:58:19', '2019-08-21 18:06:29', 201, '1', '正常', 2, 0);" +
+                "INSERT INTO `sys_dict_item` VALUES (5, '2019-08-21 17:58:34', '2019-08-21 18:06:31', 201, '2', '冻结', 3, 0);" +
+                "INSERT INTO `sys_dict_item` VALUES (1, '2019-08-21 17:33:25', '2019-08-21 18:06:39', 202, 'M', '男', 1, 0);" +
+                "INSERT INTO `sys_dict_item` VALUES (2, '2019-08-21 17:35:31', '2019-08-21 18:06:40', 202, 'F', '女', 2, 0);" +
+                "INSERT INTO `sys_dict_item` VALUES (8, '2020-02-11 14:54:35', '2020-02-11 14:54:35', 203, 'D', '目录', 1, 0);" +
+                "INSERT INTO `sys_dict_item` VALUES (9, '2020-02-11 14:54:46', '2020-02-11 14:54:46', 203, 'M', '菜单', 2, 0);" +
+                "INSERT INTO `sys_dict_item` VALUES (10, '2020-02-11 14:54:59', '2020-02-11 14:54:59', 203, 'B', '按钮', 3, 0);";
         return Arrays.asList(sql.split(";"));
     }
 

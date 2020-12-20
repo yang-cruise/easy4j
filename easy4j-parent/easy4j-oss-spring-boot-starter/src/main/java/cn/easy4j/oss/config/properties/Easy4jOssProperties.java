@@ -25,6 +25,7 @@ public class Easy4jOssProperties {
         private String accessKeyId;
         private String accessKeySecret;
         private String endpoint;
+        private String domain;
     }
 
 }

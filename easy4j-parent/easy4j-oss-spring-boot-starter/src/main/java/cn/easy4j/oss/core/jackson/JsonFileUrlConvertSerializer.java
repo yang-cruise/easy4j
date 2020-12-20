@@ -12,7 +12,8 @@ import com.fasterxml.jackson.databind.ser.std.StdScalarSerializer;
 import org.apache.commons.lang3.StringUtils;
 
 import java.io.IOException;
-import java.util.Objects;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * 数据字典序列化工具
@@ -53,10 +54,26 @@ public class JsonFileUrlConvertSerializer extends StdScalarSerializer<String> im
     @Override
     public void serialize(String value, JsonGenerator gen, SerializerProvider provider) throws IOException {
         gen.writeObject(value);
-        if (Objects.nonNull(value)) {
-            FileStorageStrategy fileStorageStrategy = ApplicationUtil.getBean(FileStorageStrategy.class);
-            gen.writeStringField(this.fieldName, fileStorageStrategy.getFileUrl(value));
+        List<String> fileUrls = new ArrayList<>();
+
+        if (StringUtils.isBlank(value)) {
+            gen.writeObjectField(this.fieldName, fileUrls);
+            return;
         }
+
+        FileStorageStrategy fileStorageStrategy = ApplicationUtil.getBean(FileStorageStrategy.class);
+        if (StringUtils.indexOf(value, ",") > -1) {
+            String[] fileNames = value.split(",");
+            for (String fileName : fileNames) {
+                if (StringUtils.isBlank(fileName)) {
+                    continue;
+                }
+                fileUrls.add(fileStorageStrategy.getFileUrl(fileName));
+            }
+        } else {
+            fileUrls.add(fileStorageStrategy.getFileUrl(value));
+        }
+        gen.writeObjectField(this.fieldName, fileUrls);
     }
 
 }

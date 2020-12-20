@@ -18,7 +18,13 @@
     {
       "name": "easy4j.oss.aliyun.endpoint",
       "type": "java.lang.String",
-      "description": "oss 地域节点(例如：oss-cn-beijing.aliyuncs.com)"
+      "description": "oss 地域节点(例：oss-cn-beijing.aliyuncs.com)"
+    },
+    {
+      "name": "easy4j.oss.aliyun.domain",
+      "type": "java.lang.String",
+      "defaultValue": "bucket-name + . + endpoint",
+      "description": "访问域名，非必填（例：cdn.easy4j.cn）"
     },
     {
       "name": "easy4j.oss.local.path",

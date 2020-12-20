@@ -10,6 +10,7 @@ import com.aliyun.oss.model.CopyObjectRequest;
 import com.aliyun.oss.model.OSSObject;
 import com.aliyun.oss.model.ObjectMetadata;
 import lombok.extern.slf4j.Slf4j;
+import org.apache.commons.lang3.StringUtils;
 import org.springframework.lang.NonNull;
 
 import java.io.ByteArrayInputStream;
@@ -88,7 +89,7 @@ public class AliyunFileStorageStrategy implements FileStorageStrategy {
 
     @Override
     public String getFileUrl(@NonNull String storageName) {
-        String domain = this.aliyun.getBucketName() + "." + this.aliyun.getEndpoint();
+        String domain = StringUtils.isBlank(this.aliyun.getDomain()) ? this.aliyun.getBucketName() + "." + this.aliyun.getEndpoint() : this.aliyun.getDomain();
         return "//" + domain + "/" + storageName;
     }
 
